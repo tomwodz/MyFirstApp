@@ -1,6 +1,11 @@
 package pl.tomwodz.myfirstapp
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
+import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +21,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val b1 = findViewById<Button>(R.id.b1)
+
+        b1.setOnClickListener {
+           val t1 = "Witaj " + findViewById<EditText>(R.id.t1).text.toString()
+            Toast.makeText(applicationContext, t1, LENGTH_SHORT).show()
+        }
     }
+
 }
